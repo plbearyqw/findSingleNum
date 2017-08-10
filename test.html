@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>test</title>
+    <script type="text/javascript">
+function generateNum(n,single){
+          let nums = [];
+          if(single >= n){
+                    return;
+          }
+          for(let i = 1; i <= n; i++){
+                    if(i !== single){
+                              nums.push(i);
+                              nums.push(i);
+                    }else{
+                              nums.push(i);
+                    }
+          }
+          return nums;
+}
+
+function findNum(arr){
+          let single = [];
+          for(let i = 0; i < arr.length; i++){
+                    if(single.indexOf(arr[i]) !== -1){
+                              let index = single.indexOf(arr[i]);
+                              single.splice(index, 1);
+                    }
+                    else{
+                              single.push(arr[i]);
+                    }
+          }
+          return single;
+}
+
+    </script>
+</head>
+<body>
+     <script type="text/javascript">
+          
+          window.onload = function(){
+                    var arr = generateNum(99, 11);
+                    alert(findNum(arr));
+          };
+          
+     </script>
+
+</body>
+</html>
